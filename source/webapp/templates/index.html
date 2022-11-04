@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1 style="display: inline-block;">Список Задач:</h1><br/>
+    <a href="tasks/add/" style="display: inline-block;"><strong>Добавить новую задачу</strong></a><br/>
+    <hr style="width:50%;text-align:left;margin-left:0">
+    {% for task in tasks %}
+        <h3>{{ task.id }} - {{ task.description }}</h3>
+        <span>{{ task.get_status_display }}</span>
+        {% if task.execution_date is not None %}
+            <p>{{ task.execution_date }}</p>
+        {% endif %}
+        <hr style="width:50%;text-align:left;margin-left:0">
+    {% endfor %}
+    <br/>
+</body>
+</html>
