@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 style="display: inline-block;">Список Задач:</h1><br/>
-    <a href="tasks/add/" style="display: inline-block;"><strong>Добавить новую задачу</strong></a><br/>
+    <a href="/tasks/add/" style="display: inline-block;"><strong>Добавить новую задачу</strong></a><br/>
     <hr style="width:50%;text-align:left;margin-left:0">
     {% for task in tasks %}
         <h3>{{ task.id }} - {{ task.description }}</h3>
