@@ -19,6 +19,6 @@ from webapp.views import index_view, create_task
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_view),
+    path('', index_view, name='index'),
     path('tasks/add/', create_task),
 ]
