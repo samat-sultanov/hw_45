@@ -1,5 +1,4 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404, redirect
 from webapp.models import Task, STATUS_CHOICES
 
 
@@ -13,12 +12,13 @@ def create_task(request):
     if request.method == 'GET':
         return render(request, 'create.html', {"statuses": STATUS_CHOICES})
     else:
+        title = request.POST.get("title")
         description = request.POST.get("description")
         status = request.POST.get("status")
         if len(request.POST.get("execution_date")) > 1:
             execution_date = request.POST.get("execution_date")
         else:
             execution_date = None
-        new_task = Task.objects.create(description=description, status=status, execution_date=execution_date)
-        context = {"task": new_task}
-        return render(request, 'task_view.html', context)
+        new_task = Task.objects.create(title=title, description=description, status=status,
+                                       execution_date=execution_date)
+        return redirect('task_view', pk=new_task.pk)
