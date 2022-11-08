@@ -3,6 +3,7 @@
     "model": "webapp.task",
     "pk": 4,
     "fields": {
+        "title": "title 1",
         "description": "compile and test code from webinar 33",
         "status": "new",
         "execution_date": "2022-11-05",
@@ -14,6 +15,7 @@
     "model": "webapp.task",
     "pk": 5,
     "fields": {
+        "title": "title 2",
         "description": "finish lesson 45",
         "status": "in_progress",
         "execution_date": "2022-11-04",
@@ -25,6 +27,7 @@
     "model": "webapp.task",
     "pk": 6,
     "fields": {
+        "title": "title 3",
         "description": "finish lab-work",
         "status": "done",
         "execution_date": "2022-11-01",
