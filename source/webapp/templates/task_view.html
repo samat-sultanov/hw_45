@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-</head>
-<body>
-    <h3>{{ task.description }}</h3>
-    <p>{{ task.get_status_display }}</p>
+{% extends 'base.html' %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'task_add' %}">Add Task</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <h1>Задача номер: {{ task.id }}</h1>
+    <h3>Наименование задачи: {{ task.title }}</h3>
+    <p>Описание задачи: {{ task.description }}</p>
+    <p>Статус: {{ task.get_status_display }}</p>
     {% if task.execution_date is not None %}
-            <p>{{ task.execution_date }}</p>
+        <p>Дата выполнения: {{ task.execution_date }}</p>
     {% endif %}
-    <br/>
-    <a href="/"><strong>На главную</strong></a>
-</body>
-</html>
+    <p>Дата создания: {{ task.created_at }}</p>
+    <p>Дата изменения: {{ task.updated_at }}</p>
+{% endblock %}
+

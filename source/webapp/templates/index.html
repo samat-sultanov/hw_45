@@ -15,6 +15,7 @@
         {% if task.execution_date is not None %}
             <p>{{ task.execution_date }}</p>
         {% endif %}
+        <p><a href="{% url 'task_view' task.id %}">Подробнее...</a></p>
         <hr style="width:50%;text-align:left;margin-left:0">
     {% endfor %}
     <br/>

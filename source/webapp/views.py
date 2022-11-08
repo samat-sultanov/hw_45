@@ -8,6 +8,12 @@ def index_view(request):
     return render(request, 'index.html', context)
 
 
+def task_view(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    context = {'task': task}
+    return render(request, 'task_view.html', context)
+
+
 def create_task(request):
     if request.method == 'GET':
         return render(request, 'create.html', {"statuses": STATUS_CHOICES})
