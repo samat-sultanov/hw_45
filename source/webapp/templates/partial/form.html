@@ -1,0 +1,19 @@
+{% csrf_token %}
+
+<label>Status:</label><br/><br/>
+<select name="status">
+    {% for value, status in statuses %}
+        <option value="{{ value }}">{{ status }}</option>
+    {% endfor %}
+</select><br/><br/>
+
+{% for field in form %}
+    <p><label for="{{ field.id_for_label }}">{{ field.label }}</label></p>
+    {% for error in field.errors %}
+        <p class="text-danger">{{ error }}</p>
+    {% endfor %}
+    <p>{{ field }}</p>
+{% endfor %}
+
+
+<p><input type="submit" value="{{ button_text }}"></p>
