@@ -1,29 +1,13 @@
-{% extends 'base.html' %}
-
-{% block nav %}
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'index' %}">Главная</a>
-    </li>
+{% extends "base.html" %}
+{% block title %}
+    Create Task
 {% endblock %}
 
+
 {% block content %}
-    <h1>Создание задачи:</h1>
+    <br/><h3>Добавить Задачу:</h3><br/>
 
     <form action="" method="post">
-        {% csrf_token %}
-        <label><strong>Status:</strong></label><br/>
-        <select name="status">
-            {% for value, status in statuses %}
-                <option value="{{ value }}">{{ status }}</option>
-            {% endfor %}
-        </select><br/><br/>
-        <label><strong>Title:</strong></label><br/>
-        <input type="text" name="title"/><br/>
-        <label><strong>Description:</strong></label><br/>
-        <textarea name="description"></textarea><br/><br/>
-        <label><strong>Execution Date:</strong></label><br/>
-        <input type="text" name="execution_date"/><br/>
-        <br/>
-        <input type="submit" value="Добавить"/>
+        {% include "partial/form.html" with button_text="Добавить" %}
     </form>
 {% endblock %}
