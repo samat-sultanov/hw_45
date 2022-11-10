@@ -1,38 +1,74 @@
 [
 {
     "model": "webapp.task",
-    "pk": 4,
+    "pk": 9,
     "fields": {
-        "title": "title 1",
-        "description": "compile and test code from webinar 33",
-        "status": "new",
-        "execution_date": "2022-11-05",
-        "created_at": "2022-11-04T12:01:39.929Z",
-        "updated_at": "2022-11-04T12:01:39.929Z"
-    }
-},
-{
-    "model": "webapp.task",
-    "pk": 5,
-    "fields": {
-        "title": "title 2",
-        "description": "finish lesson 45",
-        "status": "in_progress",
-        "execution_date": "2022-11-04",
-        "created_at": "2022-11-04T12:02:17.324Z",
-        "updated_at": "2022-11-04T12:02:17.324Z"
-    }
-},
-{
-    "model": "webapp.task",
-    "pk": 6,
-    "fields": {
-        "title": "title 3",
-        "description": "finish lab-work",
+        "title": "finish book",
+        "description": "finish book python-basics -DONE",
         "status": "done",
-        "execution_date": "2022-11-01",
-        "created_at": "2022-11-04T12:02:31.874Z",
-        "updated_at": "2022-11-04T12:02:31.874Z"
+        "execution_date": "2022-11-11",
+        "created_at": "2022-11-08T12:28:04.683Z",
+        "updated_at": "2022-11-10T18:53:34.900Z"
+    }
+},
+{
+    "model": "webapp.task",
+    "pk": 12,
+    "fields": {
+        "title": "hw 47",
+        "description": "finish hw 47 before sun rises",
+        "status": "new",
+        "execution_date": "2022-11-12",
+        "created_at": "2022-11-10T19:18:09.344Z",
+        "updated_at": "2022-11-10T19:19:42.870Z"
+    }
+},
+{
+    "model": "webapp.task",
+    "pk": 15,
+    "fields": {
+        "title": "pc",
+        "description": "take pc to service-center",
+        "status": "in_progress",
+        "execution_date": "2022-11-15",
+        "created_at": "2022-11-10T19:21:55.300Z",
+        "updated_at": "2022-11-10T19:22:44.573Z"
+    }
+},
+{
+    "model": "webapp.task",
+    "pk": 16,
+    "fields": {
+        "title": "prepare breakfast",
+        "description": "have breakfast before work",
+        "status": "in_progress",
+        "execution_date": "2022-11-11",
+        "created_at": "2022-11-10T19:27:31.931Z",
+        "updated_at": "2022-11-10T19:28:08.827Z"
+    }
+},
+{
+    "model": "webapp.task",
+    "pk": 17,
+    "fields": {
+        "title": "report",
+        "description": "finish report",
+        "status": "in_progress",
+        "execution_date": "2022-12-01",
+        "created_at": "2022-11-10T19:29:15.973Z",
+        "updated_at": "2022-11-10T19:30:38.259Z"
+    }
+},
+{
+    "model": "webapp.task",
+    "pk": 18,
+    "fields": {
+        "title": "shopping",
+        "description": "go to a mall to buy groceries",
+        "status": "new",
+        "execution_date": "2022-12-01",
+        "created_at": "2022-11-10T19:30:08.740Z",
+        "updated_at": "2022-11-10T19:30:08.740Z"
     }
 },
 {
@@ -40,7 +76,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$390000$pVAq47mjMIRCV6rl5Wk7XE$izWA2LT5y5mtF9EtXpR1oCpWmgXu76Qj1leST3XEL8k=",
-        "last_login": "2022-11-04T11:56:00.388Z",
+        "last_login": "2022-11-08T11:41:34.218Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
