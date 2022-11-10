@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+
+from webapp.forms import TaskForm
 from webapp.models import Task, STATUS_CHOICES
 
 
@@ -28,3 +30,24 @@ def create_task(request):
         new_task = Task.objects.create(title=title, description=description, status=status,
                                        execution_date=execution_date)
         return redirect('task_view', pk=new_task.pk)
+
+
+def update_task(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    if request.method == 'GET':
+        form = TaskForm(initial={
+            'title': task.title,
+            'description': task.description,
+            'execution_date': task.execution_date
+        })
+        return render(request, 'update.html', {'form': form, "statuses": STATUS_CHOICES})
+    else:
+        form = TaskForm(data=request.POST)
+        if form.is_valid():
+            task.title = form.cleaned_data.get('title')
+            task.description = form.cleaned_data.get('description')
+            task.execution_date = form.cleaned_data.get('execution_date')
+            task.status = request.POST.get("status")
+            task.save()
+            return redirect('task_view', pk=task.pk)
+        return render(request, 'update.html', {'form': form, "statuses": STATUS_CHOICES})
